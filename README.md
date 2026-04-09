@@ -1,5 +1,3 @@
-email: hip145944@gmail.com
-username: notsomeonebutnoone
 
 # AI-Powered Activity to Google Calendar
 
