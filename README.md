@@ -1,12 +1,20 @@
-# AI-Powered Activity to Google Calendar
+# AI-Powered Activity to Google Calendar 📅✨
 
-This project automatically logs your computer activity into Google Calendar with task categorization and productivity scoring, using AI to process application/window activity data.
+> **Short & simple:** This project watches what app or website you’re using and neatly turns it into calendar events, so you can see where your day really went. No deep tech knowledge needed. ✅🧠
 
-It captures activity from a webhook, extracts relevant details using an AI (like Ollama), and creates structured Google Calendar events.
+It automatically logs your computer activity into Google Calendar with task categorization and productivity scoring, using AI to process application/window activity data. 🤖⏱️
+
+It captures activity from a webhook, extracts relevant details using an AI (like Ollama), and creates structured Google Calendar events. 🚀
 
 ---
 
-## Features
+## Visual Flow 🧭
+
+![Workflow](assets/flow.png)
+
+---
+
+## Features ✅
 
 - Logs application usage, window title, and URL.
 - Extracts task and category information using AI.
@@ -19,7 +27,17 @@ It captures activity from a webhook, extracts relevant details using an AI (like
 
 ---
 
-## Table of Contents
+## Quick Snapshot ⚡
+
+| What it does | Why it helps |
+| --- | --- |
+| Turns app usage into calendar events | See your day clearly at a glance |
+| Auto labels tasks and categories | Understand patterns without manual logging |
+| Calculates a productivity score | Quick feedback on focus time |
+
+---
+
+## Table of Contents 📚
 
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installation)
@@ -33,10 +51,11 @@ It captures activity from a webhook, extracts relevant details using an AI (like
 10. [Troubleshooting](#troubleshooting)
 11. [Security Notes](#security-notes)
 12. [Roadmap](#roadmap)
+13. [License](#license)
 
 ---
 
-## Prerequisites
+## Prerequisites 🧰
 
 Before you begin, make sure you have the following:
 
@@ -45,9 +64,18 @@ Before you begin, make sure you have the following:
 - A webhook source sending activity data (e.g., browser extension, Zen Browser, or custom logger)
 - Optional: Ollama AI API or any AI capable of returning JSON task categorization
 
+### Requirements Table
+
+| Requirement | Why it matters |
+| --- | --- |
+| Node.js 18+ | Runs the server |
+| Google Calendar access | Where events are created |
+| Activity logger or webhook source | Feeds app activity data |
+| Optional AI endpoint | Auto task categorization |
+
 ---
 
-## Installation
+## Installation 🧩
 
 1. Clone the repository:
 
@@ -66,7 +94,7 @@ npm install
 
 ---
 
-## Configuration
+## Configuration ⚙️
 
 ### Quick Start Checklist
 
@@ -118,7 +146,7 @@ AI_MODEL=ollama-model
 
 ---
 
-## Local Setup (Step-by-step)
+## Local Setup (Step-by-step) 🚦
 
 1. Install Node.js 18+ and confirm with `node -v`.
 2. Clone the repository and enter the folder:
@@ -152,7 +180,7 @@ curl -X POST http://localhost:5678/webhook -H "Content-Type: application/json" -
 
 ---
 
-## Google API Setup
+## Google API Setup 🔐
 
 You can authenticate using either an OAuth Client ID (recommended for personal use) or a Service Account (recommended for team/automation, but requires calendar sharing).
 
@@ -176,7 +204,7 @@ If you are unsure which to pick, start with OAuth Client ID.
 
 ---
 
-## Webhook Setup
+## Webhook Setup 🪝
 
 Your AI or logging system needs to send activity data in JSON format via a webhook.
 
@@ -210,7 +238,7 @@ Example JSON payload:
 
 ---
 
-## Code Overview
+## Code Overview 🧠
 
 The main workflow:
 
@@ -263,7 +291,7 @@ If any field is missing, the system will fall back to `N/A`.
 
 ---
 
-## Running the Node
+## Running the Node ▶️
 
 Start the Node.js process:
 
@@ -282,7 +310,7 @@ If you want this to run all day, use a process manager like:
 
 ---
 
-## Sample Output
+## Sample Output 📝
 
 Google Calendar Event Example:
 
@@ -302,7 +330,7 @@ End: `2026-04-07T21:33:00Z`
 
 ---
 
-## Troubleshooting
+## Troubleshooting 🧯
 
 - Task shows N/A:
   Ensure AI response JSON includes `task_name`.
@@ -319,7 +347,7 @@ End: `2026-04-07T21:33:00Z`
 
 ---
 
-## Security Notes
+## Security Notes 🛡️
 
 - Do not commit your credentials JSON or `.env` file.
 - Treat webhook payloads as sensitive: they may contain URLs or window titles.
@@ -327,8 +355,14 @@ End: `2026-04-07T21:33:00Z`
 
 ---
 
-## Roadmap
+## Roadmap 🗺️
 
 - Add support for multiple calendars based on category.
 - Add deduplication for repeated window titles.
 - Add a dashboard view for daily summaries.
+
+---
+
+## License 📄
+
+MIT License. See `LICENSE`.
